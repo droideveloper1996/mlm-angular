@@ -1,0 +1,51 @@
+<div class="main-login">
+    <div class="root center">
+        <div class="form-div center">
+            <img src="../../assets/_logo_edited.png" class="logo-company center" />
+            <h4 class="center hero-heading">Motilal Memorial Shiksha Sansthan</h4>
+            <p *ngIf="hasErrorOccured">
+                <ngb-alert type="danger" (close)="close()">{{ errorOccured }}</ngb-alert>
+            </p>
+            <form #loginForm="ngForm" (ngSubmit)=submitLogin(loginForm)>
+                <div class="form-group">
+                    <input type="text" ngModel #login="ngModel" name="login" required minlength="5" maxlength="16"
+                        placeholder={{placeholder}} class="form-control" ngbPopover="Username 5 digit  Required "
+                        popoverTitle="Login" placement="right" />
+                    <div *ngIf="(login.touched  &&!login.valid)">
+                        <div *ngIf="login.errors.minlength">Minimum length of
+                            {{login.errors.minlength.requiredLength}} is
+                            required</div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <input type="password" ngModel #password="ngModel" name="password" required minlength="5"
+                        placeholder="Password" class="form-control" ngbPopover="Password Required " popoverTitle="Login"
+                        placement="right" />
+
+                    <div *ngIf="(password.touched  &&!password.valid)">
+                        <div *ngIf="password.errors.minlength">Minimum length of
+                            {{password.errors.minlength.requiredLength}} is
+                            required</div>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <button [disabled]="!loginForm.valid" class="btn btn-danger login-btn">Login</button>
+                </div>
+
+            </form>
+
+            <div class="spacer-top">
+                <div class="floatLeft spacer-top">
+                    <h6><a routerLink="register"> New Office Registration</a></h6>
+                </div>
+                <div class="floatRight spacer-top">
+                    <h6>
+                        <a routerLink="forgot-password">Forgot Password?</a>
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+    </div>

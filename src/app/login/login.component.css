@@ -1,0 +1,202 @@
+.main-login {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.root {
+    width: 30%;
+    position: relative;
+    -ms-transform: translateY(20%);
+    transform: translateY(25%);
+    color: #2c2b2b;
+}
+
+
+.logo-company {
+    width: 100%;
+    height: 70px;
+    width: 70px;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-div {
+    padding: 10%;
+    background: #fafafa;
+    box-shadow: 0 4px 8px 0 rgba(219, 161, 161, 0.2);
+    transition: 0.3s;
+    border: 1px solid #f1f2f9;
+    border-radius: 8px;
+}
+
+.form-div:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.custom-style {
+    width: 100%;
+    position: absolute;
+    z-index: -5;
+    top: 40px;
+    left: -1px;
+    right: 0px;
+    background-size: cover;
+
+}
+
+a {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+a:hover {
+    transition: font 0.3s
+}
+
+a:visited {
+    transition: border-bottom 0.2s;
+}
+
+.hero-heading {
+    width: 100%;
+    bottom: 15px;
+    position: relative;
+}
+
+
+.login-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.spacer-top {
+    margin: 8px;
+    padding-bottom: 16px;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+input {
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 15px;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+    background: #fff;
+
+}
+
+.form-div h4 {
+    color: #353839;
+}
+
+.copyright {
+    margin: 10px;
+}
+
+.footer {
+    background: rgb(250, 250, 250);
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    height: 40px;
+}
+
+mat-radio-button {
+    padding: 4px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .spacer-top {
+        margin-top: 8px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .floatLeft {
+        float: none;
+        clear: left;
+    }
+
+    .floatRight {
+        float: none;
+        clear: right;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 11px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .spacer-top {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .floatLeft {
+        float: none;
+        clear: left;
+    }
+
+    .floatRight {
+        float: none;
+        clear: right;
+    }
+
+    .root {
+        width: 90%;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 1290px) {
+
+    .spacer-top {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .floatLeft {
+        float: none;
+        clear: left;
+    }
+
+    .floatRight {
+        float: none;
+        clear: right;
+    }
+
+
+
+    a {
+        text-decoration: none;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,12 @@
+.error-msg {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    width: 45%;
+}

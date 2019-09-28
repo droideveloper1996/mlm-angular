@@ -1,0 +1,354 @@
+<aside>
+    <app-sidebar></app-sidebar>
+</aside>
+<div class="main">
+    <div class="container-fluid card">
+        <div class="form-title ">
+            <h4>Student Registration</h4>
+        </div>
+
+        <form #studentForm='ngForm' (ngSubmit)="registerStudent(studentForm)">
+            <div class="form-sub-title">
+                <h6>Student Personal Details</h6>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input type="text" required #studentFirstName="ngModel" ngModel minlength="3"
+                            name="studentFirstName" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="">Last Name</label>
+                        <input type="text" required #studentLastName="ngModel" minlength="3" ngModel
+                            name="studentLastName" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="">Default Password</label>
+                        <input type="text" required #password="ngModel" minlength="5" ngModel name="password"
+                            class="form-control">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select type="text" required id="gender" class="form-control" ngModel gender="ngModel" #gender
+                            name="gender">
+                            <option selected disabled hidden value="">Choose Gender
+                            </option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="">Date Of Birth</label>
+                        <div class="input-group">
+                            <input class="form-control" #dateOfBirth placeholder="yyyy-mm-dd" name="dateOfBirth" ngModel
+                                dateOfBirth="ngModel" ngbDatepicker #dob="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary fa fa-calendar" (click)="dob.toggle()"
+                                    type="button"></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="religion">Religion</label>
+                        <select type="text" required id="religion" class="form-control" ngModel religion="ngModel"
+                            #religion name="religion">
+                            <option selected disabled hidden value="">Choose Category
+                            </option>
+                            <option value="hindu">Hindu</option>
+                            <option value="muslim">Muslim</option>
+                            <option value="sikh">Sikh</option>
+                            <option value="christian">Christian</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select type="text" required id="category" class="form-control" ngModel category="ngModel"
+                            #category name="category">
+                            <option selected disabled hidden value="">Choose Category
+                            </option>
+                            <option value="general">General</option>
+                            <option value="obc">OBC</option>
+                            <option value="sc">SC</option>
+                            <option value="st">ST</option>
+                            <option value="minority">Minority</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="subCategory">Sub Category</label>
+                        <input type="text" required id="subCategory" class="form-control" ngModel subCategory="ngModel"
+                            #subCategory name="subCategory" />
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="disability">Disability If any</label>
+                        <select type="text" required id="disability" class="form-control" ngModel disability="ngModel"
+                            #disability name="disability">
+                            <option selected disabled hidden value="">Select
+                            </option>
+                            <option value="false">None</option>
+                            <option value="true">Yes</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="conveyance">Conveyance Method</label>
+                        <select type="text" required id="conveyance" class="form-control" ngModel conveyance="ngModel"
+                            #conveyance name="conveyance">
+                            <option selected disabled hidden value="">Select
+                            </option>
+                            <option value="own">Own conveyance</option>
+                            <option value="school">School Conveyance</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="admissionType">Admission Type</label>
+                        <select type="text" required id="admissionType" class="form-control" ngModel
+                            admissionType="ngModel" #admissionType name="admissionType">
+                            <option selected disabled hidden value="">Select Type
+                            </option>
+                            <option value="regular">Regular</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="adhaarNumber">Adhaar Number </label>
+                        <input type="number" required id="adhaarNumber" maxlength="12" minlength="12" class="form-control"
+                            ngModel adhaarNumber="ngModel" #adhaarNumber name="adhaarNumber" />
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <div class="form-sub-title">
+                <h6>Student Academic Details</h6>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="">Date Of Admission</label>
+                        <div class="input-group">
+                            <input class="form-control" #dateOfAdmission placeholder="yyyy-mm-dd" name="dateOfAdmission"
+                                doa="(ngModel)" ngbDatepicker ngModel #doa="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary fa fa-calendar" (click)="doa.toggle()"
+                                    type="button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="">Student ID/Scholar No</label>
+                        <input type="text" ngModel studentID="ngModel" #studentID name='studentID' class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="wingType">Admission Wing</label>
+                        <select required id="wingType" class="form-control" ngModel wingType="ngModel" #wingType
+                            name="wingType">
+                            <option value="" selected>Select Department
+                            </option>
+                            <option value="junior">Junior</option>
+                            <option value="primary">Primary</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="boardType">Board Type</label>
+                        <select required id="boardType" class="form-control" ngModel boardType="ngModel" #boardType
+                            name="boardType">
+                            <option selected disabled hidden value="">Select Board</option>
+                            <option value="up">UP Board</option>
+                            <option value="cbse">CBSE Board</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="medium">Medium</label>
+                        <select required id="medium" class="form-control" ngModel medium="ngModel" #medium
+                            name="medium">
+                            <option selected disabled hidden value="">Choose Medium</option>
+                            <option value="english">English</option>
+                            <option *ngIf="boardType.value=='up'" value="hindi">Hindi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="">Student Roll No </label>
+                        <input required type="text" ngModel #boardRollNo name="boardRollNo" boardRollNo="ngModel"
+                            class="form-control">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="form-sub-title">
+                <h6>Student Contact Details</h6>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="fatherName">Father's Name</label>
+                        <input required type="text" id="fatherName" max="10" ngModel #fatherName="ngModel"
+                            name="fatherName" class="form-control">
+                    </div>
+
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="motherName">Mother's Name</label>
+                        <input required type="text" id="motherName" max="10" ngModel #motherName="ngModel"
+                            name="motherName" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="guardianName">Guardian's Name</label>
+                        <input required type="text" id="guardianName" max="10" ngModel #guardianName="ngModel"
+                            name="guardianName" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="primaryMobile">Primary Mobile Number</label>
+                        <input required type="number" id="primaryMobile" minlength="10" maxlength="10" ngModel
+                            #primaryMobile="ngModel" name="primaryMobile" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="secondaryMobile">Secondary Mobile Number</label>
+                        <input required type="number" id="secondaryMobile" minlength="10" maxlength="10" ngModel
+                            #secondaryMobile="ngModel" name="secondaryMobile" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="guardianRelation">Guardian's Relation</label>
+                        <input required type="text" id="guardianRelation" ngModel #guardianRelation="ngModel"
+                            name="guardianRelation" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea required type="text" id="address" rows="4" ngModel #address="ngModel" name="address"
+                            class="form-control">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="address">Upload Picture</label>
+                        <input required type="file" accept="image/*" (change)="selectStudentPicture($event)"
+                            class="form-control" />
+                        <div class="preview" *ngIf="pictureUploaded">
+                            <img src="{{ACTIVE_URL}}/getImage/{{photo_id}}" alt="picture.jpg" />
+                            <div class="upload-status">
+                                <div *ngIf='pic_status==200'>
+                                    <i class="fa fa-check alert-primary alert" aria-hidden="true"></i> Uploaded
+                                </div>
+
+                                <div *ngIf='pic_status!=200'>
+                                    <i class="fa fa-times alert-danger alert" aria-hidden="true"></i>Failed Uploading
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-sm">
+                    <div class="form-group" *ngIf="pictureUploaded">
+                        <label for="address">Upload Signature</label>
+                        <input required accept="image/*" type="file" (change)="selectStudentSignature($event)"
+                            class="form-control" />
+                        <div *ngIf="signatureUploaded" class="preview">
+                            <img src='{{ACTIVE_URL}}/getImage/{{signature_id}}' alt="sign.jpg" />
+                            <div class="upload-status">
+                                <div *ngIf='sign_status==200'>
+                                    <i class="fa fa-check alert alert-primary" aria-hidden="true"></i> Uploaded
+                                </div>
+
+                                <div *ngIf='sign_status!=200'>
+                                    <i class="fa fa-times alert alert-danger" aria-hidden="true"></i>Failed Uploading
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <button [disabled]="!studentForm.valid" class="btn btn-primary form-control">Register
+                            Student</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p *ngIf="successfulSubmission">
+                    <ngb-alert type="success" (close)="close()">Form Submitted Successfully &nbsp;
+                    </ngb-alert>
+                </p>
+                <p *ngIf="hasErrorOccured">
+                    <ngb-alert type="danger" (close)="close()">Error Occurred &nbsp;{{ errorOccured }}</ngb-alert>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>

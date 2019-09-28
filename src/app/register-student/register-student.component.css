@@ -1,0 +1,44 @@
+img {
+    height: 150px;
+    width: 120px;
+    border: solid 1px rgb(163, 162, 162);
+    border-radius: 8px;
+    padding: 5px;
+    align-content: center;
+}
+
+.form-title h4 {
+    font-weight: 400;
+    padding-bottom: 10px;
+    width: 100%;
+    align-content: center;
+    padding: 1% 5%
+}
+
+.form-sub-title h6 {
+    font-weight: 400;
+    padding-bottom: 10px;
+    color: #323232;
+}
+
+form {
+    padding: 0 5%
+}
+
+.preview {
+    height: 130px;
+    width: 95px;
+    margin: 5% 5% 5% 35%;
+}
+
+.preview img {
+    height: 120px;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.upload-status i{
+    color: 
+
+}

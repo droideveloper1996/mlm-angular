@@ -1,0 +1,110 @@
+.sidenav {
+    height: 100vh;
+    width: 18%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    padding-top: 20px;
+    opacity: 0.8;
+    filter: alpha(opacity=90);
+    background-image: url("https://birchtree.nyc3.digitaloceanspaces.com/images/wallpapers/gradients2019/gradient2.png");
+    background-color: #cccccc;
+    border-top-right-radius: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    margin: 0 20px;
+    padding: 10px 5px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    display: block;
+    transition: all 0.2s ease 0s;
+}
+
+.dashboard-brand {
+    margin: 2% 12%;
+    padding: 10px 4px 6px 16px;
+    align-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    color: #323232;
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    background: rgb(33, 137, 255);
+    color: #fff;
+
+}
+
+/* Style page content */
+.main {
+    margin-left: 18%;
+}
+
+i {
+    padding-right: 15px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font
+    size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .sidenav {
+        padding-top: 15px;
+        width: 10%;
+    }
+
+    .sidenav a {
+        font-size: 12px;
+        padding: 4px;
+        margin: 4px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease 0s;
+    }
+
+    .dashboard-brand {
+        padding: 0px;
+        align-content: center;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 13px;
+        color: #323232;
+        display: none;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    .sidenav {
+        border-top-right-radius: 00px;
+    }
+
+    .sidenav a span {
+        display: none;
+    }
+
+    i {
+        align-content: center;
+        margin: 5%;
+        font-size: 16px;
+    }
+}

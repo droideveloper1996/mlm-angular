@@ -1,0 +1,30 @@
+.pointer {
+    cursor: pointer;
+
+}
+
+.brand {
+    font-weight: 500;
+
+}
+
+.nav__links li {
+    display: inline-block;
+}
+
+
+
+.nav__links li a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+
+}
+
+.nav__links li a:hover {
+    color: #536dfe;
+
+}
+
+.custom-navbar {
+    background: #9150A9;
+}

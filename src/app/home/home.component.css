@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,300,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    list-style: none;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 10%;
+}
+
+.nav__links li {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0px 20px
+}
+
+
+
+.nav__links li a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+
+}
+
+.nav__links li a:hover {
+    color: #536dfe;
+
+}
+
+.logo {
+    margin-right: auto;
+    height: 15%;
+    width: 15%;
+    cursor: pointer;
+
+}
+
+.btn-login {
+    background: rgba(31, 63, 254, 1);
+    color: #fff;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.main {
+    position: relative;
+}
+
+.banner {
+    display: flex;
+    justify-content: flex-end;
+    flex: 3;
+    position: relative;
+    z-index: -1;
+}
+
+.banner-content h1 {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    font-size: 36px;
+    font-weight: 300;
+    color: #323232;
+    z-index: 1;
+    left: 170px;
+    top: 150px;
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin: 3%;
+    align-content: center;
+    justify-content: center;
+}
+
+.card img {
+    height: 220px;
+}
+
+.card .card-body {
+    padding: 10%;
+}
+
+.card .card-body h5 {
+    font-weight: 500;
+}
+
+.card .card-body p {
+    font-weight: 300;
+}

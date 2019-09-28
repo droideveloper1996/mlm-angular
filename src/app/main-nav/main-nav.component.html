@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand brand" routerLink="home"><span><img src="../../assets/_logo_edited.png"
+                height="50px" /></span></a>
+    <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse"
+        data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarTogglerDemo02">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 nav__links">
+            <li (click)="isCollapsed = !isCollapsed" class="nav-item ">
+                <a class="nav-link" routerLinkActive=" current active" routerLink="home">Home <span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li (click)="isCollapsed = !isCollapsed" class="nav-item">
+                <a class="nav-link" routerLinkActive=" current active" routerLink="academics">Academics</a>
+            </li>
+            <li (click)="isCollapsed = !isCollapsed" class="nav-item">
+                <a class="nav-link" routerLinkActive=" current active" routerLink="infra">Infrastructure</a>
+            </li>
+            <li (click)="isCollapsed = !isCollapsed" class="nav-item">
+                <a class="nav-link" routerLinkActive=" current active" routerLink="event">Events & Functions</a>
+            </li>
+            <li class="nav-item dropdown pointer" ngbDropdown>
+                <a class="nav-link dropdown-toggle pointer " routerLinkActive=" current active" id="navbarDropdown"
+                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+                    Extra Curricular
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" ngbDropdownMenu>
+                    <a (click)="isCollapsed = !isCollapsed" class="dropdown-item" routerLink="#"
+                        ngbDropdownItem>Action</a>
+                    <a (click)="isCollapsed = !isCollapsed" class="dropdown-item" routerLink="#" ngbDropdownItem>Another
+                        action</a>
+                    <div class="dropdown-divider"></div>
+                    <a (click)="isCollapsed = !isCollapsed" class="dropdown-item" routerLink="#"
+                        ngbDropdownItem>Something else here</a>
+                </div>
+            </li>
+            <li (click)="isCollapsed = !isCollapsed" class="nav-item">
+                <a class="nav-link" routerLinkActive=" current active" routerLink="about" tabindex="-1"
+                    aria-disabled="true">About</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+
+            <ul class="navbar-nav my-sm-0 nav__links ">
+                <li class="nav-item dropdown " ngbDropdown>
+                    <a *ngIf="!isLoggedIn" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+                        Login
+                    </a>
+                    <a *ngIf="isLoggedIn" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+                        {{username}}
+                    </a>
+                    <div *ngIf="!isLoggedIn" class=" dropdown-menu-right" aria-labelledby="navbarDropdown"
+                        ngbDropdownMenu>
+
+                        <a (click)="isCollapsed = !isCollapsed" [queryParams]='{login:"student"}' class="dropdown-item"
+                            routerLink="/login" ngbDropdownItem>Student</a>
+                        <a (click)="isCollapsed = !isCollapsed" class="dropdown-item" routerLink="/login"
+                            [queryParams]='{login:"teacher"}' ngbDropdownItem>Teacher</a>
+                        <div class="dropdown-divider"></div>
+                        <a (click)="isCollapsed = !isCollapsed" [queryParams]='{login:"office"}' class="dropdown-item"
+                            routerLink="/login" ngbDropdownItem>Office</a>
+                    </div>
+                    <div *ngIf="isLoggedIn" class="  dropdown-menu-right" aria-labelledby="navbarDropdown"
+                        ngbDropdownMenu>
+                        <a *ngIf="role=='office' || role=='admin'" (click)="isCollapsed = !isCollapsed; "
+                            class="dropdown-item" routerLink="/office/dashboard" ngbDropdownItem>Dashboard</a>
+                        <div class="dropdown-divider"></div>
+                        <a (click)="isCollapsed = !isCollapsed; logout()" [queryParams]='{login:"office"}'
+                            class="dropdown-item" routerLink="/login" ngbDropdownItem>Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+        </form>
+
+    </div>
+</nav>

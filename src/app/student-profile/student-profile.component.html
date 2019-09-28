@@ -1,0 +1,52 @@
+<aside>
+    <app-sidebar></app-sidebar>
+</aside>
+<div class="main">
+    <div class="well">
+        <div>Registered Student</div>
+        <br />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Student ID.</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Father's Name</th>
+                    <th scope="col">Mother's Name</th>
+                    <th scope="col">Board </th>
+                    <th scope="col">Contact </th>
+                    <th scope="col">Photo </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let student of students; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        {{ student.studentID }}
+                    </td>
+                    <td>
+                        {{ student.studentFirstName  }}&nbsp; {{ student.studentLastName  }}
+                    </td>
+                    <td>
+                        {{ student.personalDetail.fatherName }}
+                    </td>
+                    <td> {{ student.personalDetail.motherName }}
+                    </td>
+                    <td>
+                        {{ student.boardType| uppercase}}
+                    </td>
+                    <td>
+                        {{ student.primaryMobile}}
+                    </td>
+                    <td>
+                        <img src="{{ACTIVE_URL}}/getImage/{{student.profilePictureRef}}" alt="student_pic">
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

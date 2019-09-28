@@ -1,0 +1,31 @@
+footer {
+    display: flex;
+    background: #36275D;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+.copyright {
+    padding: 40px;
+    color: #f8f8f8;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.copyright span i {
+    color: whitesmoke;
+}
