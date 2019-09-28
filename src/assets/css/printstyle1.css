@@ -1,0 +1,76 @@
+body {
+    font-family: serif
+}
+
+h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 40pt;
+    line-height: 18mm
+}
+
+h2,
+h3 {
+    font-family: 'Tangerine', cursive;
+    font-size: 24pt;
+    line-height: 7mm
+}
+
+h4 {
+    font-size: 32pt;
+    line-height: 14mm
+}
+
+h2+p {
+    font-size: 18pt;
+    line-height: 7mm
+}
+
+h3+p {
+    font-size: 14pt;
+    line-height: 7mm
+}
+
+li {
+    font-size: 11pt;
+    line-height: 5mm
+}
+
+h1 {
+    margin: 0
+}
+
+h1+ul {
+    margin: 2mm 0 5mm
+}
+
+h2,
+h3 {
+    margin: 0 3mm 3mm 0;
+    float: left
+}
+
+h2+p,
+h3+p {
+    margin: 0 0 3mm 50mm
+}
+
+h4 {
+    margin: 2mm 0 0 50mm;
+    border-bottom: 2px solid black;
+    font-size: 17px;
+}
+
+h4+ul {
+    margin: 5mm 0 0 50mm
+}
+
+article {
+    border: 4px double black;
+    padding: 5mm 10mm;
+    border-radius: 3mm
+}
+
+img {
+    width: 120px;
+    height: 140px;
+}

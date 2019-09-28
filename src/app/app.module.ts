@@ -37,7 +37,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { NgxPrintModule } from 'ngx-print';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +65,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    NgxPrintModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
     NgbModule,
