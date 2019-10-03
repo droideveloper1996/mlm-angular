@@ -74,19 +74,54 @@
 
             <div class="row-custom">
                 <br><br>
+                <h4>Payment Towards:</h4>
+                <div class="form-group">
+                    <label for="paymentType"></label>
+                    <select id="paymentType" #paymentType="ngModel" ngModel name="paymentType" ngModeltype="text"
+                        class="form-control">
+                        <option disabled selected value="">Choose Payment For</option>
+                        <option value="monthly">Monthly Fee</option>
+                        <option value="registration">Registration Fee</option>
+                        <option value="board">Board Fee</option>
+                        <option value="fine">Fine</option>
+                        <option value="extra">Extra Curricular</option>
+                        <option value="tc">TC</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row-custom">
+                <br><br>
                 <h4>Fees Summary</h4>
-                <div class="row" id="print-section-receipt">
+                <div *ngIf="paymentType.value=='monthly'" class="row" id="print-section-receipt">
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label for="previousBalance">Previous Balance</label>
-                            <input type="number" id="previousBalance" [(ngModel)]="previousBalance" disabled
+                            <input type="number" id="previousBalance" [(ngModel)]="previousBalance"
                                 class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group ">
+                            <label for="">&nbsp;</label>
+                            <div class="form-control">
+                                +
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label for="currentMonth">Current Month</label>
                             <input type="number" id="" [(ngModel)]="currentMonth" disabled class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group ">
+                            <label for="">&nbsp;</label>
+                            <div class="form-control">
+                                =
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-3">
@@ -96,12 +131,19 @@
                                 class="form-control">
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="paid">Paid</label>
-                            <input type="number" id="paid" required [(ngModel)]="paid" class="form-control">
+                    <div class="row flex-container">
+                        <div class="right ">
+                            <div class="col-sm-12">
+                                <div class="form-group ">
+                                    <label for="paid">Paid</label>
+                                    <input type="number" id="paid" required [(ngModel)]="paid" class="form-control">
+                                </div>
+                            </div>
                         </div>
+
+
                     </div>
+
                 </div>
                 <button class="btn btn-danger" (click)="print()">Print Receipt</button>
             </div>

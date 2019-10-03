@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   placeholder = 'Login Id';
   errorOccured = false;
   hasErrorOccured: boolean = false;
+  loginClicked = false
   constructor(private authservice: AuthService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,8 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   submitLogin(loginDetails) {
-
-    localStorage.removeItem('auth-token');
+    this.loginClicked = true;
     const queryParam = this.route.snapshot.queryParamMap.get('login');
     const payload = loginDetails.value;
     if (queryParam === 'office') {
@@ -29,12 +29,15 @@ export class LoginComponent implements OnInit {
   }
 
   loginOffice(payload) {
+    console.log("LoginPayload", payload);
 
     this.authservice.authenticateOffice(payload).subscribe(res => {
       console.log(res);
       if (res) {
-        this.router.navigateByUrl('/#/office').then(() =>
-          this.router.navigate(["/office/dashboard"]));
+        // this.router.navigateByUrl('/MainNavComponent').then(() =>
+        //   this.router.navigate(["/office/dashboard"]));
+        window.location.href = "/#/office/dashboard"
+
         //this.router.navigate([''])
       }
 
@@ -42,10 +45,13 @@ export class LoginComponent implements OnInit {
       this.hasErrorOccured = true;
       this.errorOccured = error.error.message
       console.log(error.error.message)
+      this.loginClicked = false;
     })
 
   }
   close() {
     this.hasErrorOccured = false;
+    this.loginClicked = false;
+
   }
 }

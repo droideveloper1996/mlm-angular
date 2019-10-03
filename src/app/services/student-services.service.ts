@@ -29,7 +29,11 @@ interface StudentResponse {
   wingType: string;
   __v: 0
   _id: string;
-  personalDetail: custom
+  section: string;
+  class: string;
+  personalDetail: custom;
+  stream: string;
+  previousBalance: string;
 
 }
 

@@ -63,6 +63,7 @@
 
                     </div>
                 </div>
+
             </div>
             <div class="row">
                 <div class="col-sm">
@@ -144,8 +145,8 @@
                 <div class="col-sm">
                     <div class="form-group">
                         <label for="adhaarNumber">Adhaar Number </label>
-                        <input type="number" required id="adhaarNumber" maxlength="12" minlength="12" class="form-control"
-                            ngModel adhaarNumber="ngModel" #adhaarNumber name="adhaarNumber" />
+                        <input type="number" required id="adhaarNumber" maxlength="12" minlength="12"
+                            class="form-control" ngModel adhaarNumber="ngModel" #adhaarNumber name="adhaarNumber" />
                     </div>
                 </div>
             </div>
@@ -212,10 +213,76 @@
                         </select>
                     </div>
                 </div>
+
+            </div>
+            <div class="row">
                 <div class="col-sm">
                     <div class="form-group">
-                        <label for="">Student Roll No </label>
-                        <input required type="text" ngModel #boardRollNo name="boardRollNo" boardRollNo="ngModel"
+                        <label for="_class">Class</label>
+                        <select type="text" required id="_class" class="form-control" ngModel _class="ngModel" #_class
+                            name="_class">
+                            <option selected disabled hidden value="">Choose Class
+                            </option>
+                            <option *ngIf="medium.value=='hindi'" value="na">NA</option>
+                            <option *ngIf="medium.value=='hindi'" value="nb">NB</option>
+                            <option *ngIf="medium.value=='english'" value="pg">PG</option>
+                            <option *ngIf="medium.value=='english'" value="lkg">LKG</option>
+                            <option *ngIf="medium.value=='english'" value="ukg">UKG</option>
+                            <option value="1">I</option>
+                            <option value="2">II</option>
+                            <option value="3">III</option>
+                            <option value="4">IV</option>
+                            <option value="5">V</option>
+                            <option value="6">VI</option>
+                            <option value="7">VII</option>
+                            <option value="8">VIII</option>
+                            <option value="9">IX</option>
+                            <option value="10">X</option>
+                            <option value="11">XI</option>
+                            <option value="12">XII</option>
+                        </select>
+                    </div>
+                </div>
+                <div *ngIf="_class.value>=11 && _class.value<=12" class="col-sm">
+                    <div class="form-group">
+                        <label for="stream">Stream</label>
+                        <select type="text" required id="stream" class="form-control" ngModel stream="ngModel" #stream
+                            name="stream">
+                            <option selected disabled hidden value="">Choose Stream
+                            </option>
+                            <option value="science">Science</option>
+                            <option value="arts">Arts</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="section">Section</label>
+                        <select type="text" required id="section" class="form-control" ngModel section="ngModel"
+                            #section name="section">
+                            <option selected disabled hidden value="">Choose Section
+                            </option>
+                            <option value="*">No Section</option>
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                            <option value="d">D</option>
+                            <option value="e">E</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="boardRollNo">Student Roll No </label>
+                        <input required type="text" id="boardRollNo" ngModel #boardRollNo name="boardRollNo"
+                            boardRollNo="ngModel" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="balanceAmount">Balance Amount </label>
+                        <input required type="text" ngModel #balanceAmount name="balanceAmount" balanceAmount="ngModel"
                             class="form-control">
                     </div>
                 </div>
@@ -300,7 +367,8 @@
                                 </div>
 
                                 <div *ngIf='pic_status!=200'>
-                                    <i class="fa fa-times alert-danger alert" aria-hidden="true"></i>Failed Uploading
+                                    <i class="fa fa-times alert-danger alert" aria-hidden="true"></i>Failed
+                                    Uploading
                                 </div>
                             </div>
                         </div>
@@ -322,7 +390,8 @@
                                 </div>
 
                                 <div *ngIf='sign_status!=200'>
-                                    <i class="fa fa-times alert alert-danger" aria-hidden="true"></i>Failed Uploading
+                                    <i class="fa fa-times alert alert-danger" aria-hidden="true"></i>Failed
+                                    Uploading
                                 </div>
                             </div>
                         </div>

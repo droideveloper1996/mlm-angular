@@ -133,11 +133,15 @@ export class RegisterStudentComponent implements OnInit {
       studentLastName: studentObject.studentLastName,
       studentFirstName: studentObject.studentFirstName,
       personalDetail: personalDetail,
-      adhaarNumber: studentObject.adhaarNumber+"",
+      adhaarNumber: studentObject.adhaarNumber + "",
       conveyance: studentObject.conveyance,
       disability: studentObject.disability,
       admissionType: studentObject.admissionType,
-      registeredBy: token
+      class: studentObject._class,
+      section: studentObject.section,
+      registeredBy: token,
+      stream: studentObject.stream,
+      previousBalance: studentObject.balanceAmount
     }
 
     console.log(payload);

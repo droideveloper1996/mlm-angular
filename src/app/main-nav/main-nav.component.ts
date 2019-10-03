@@ -1,6 +1,6 @@
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthService } from './../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.css']
 })
-export class MainNavComponent implements OnInit {
+export class MainNavComponent implements OnInit, OnChanges {
+  @Input() loginStatus: boolean;
   isCollapsed = true;
   student
   teacher
@@ -41,9 +42,8 @@ export class MainNavComponent implements OnInit {
     });
   }
 
-  // isLoggedIn() {
-
-  //   return this.authService.getAuthenticationStatus();
-  // }
-
+  ngOnChanges() { // <------
+    //this.myAttr1 = this.myAttr * 10;
+    console.log("Change Detected")
+  }
 }

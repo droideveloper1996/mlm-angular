@@ -37,15 +37,16 @@
             </form>
 
             <div class="spacer-top">
-                <div class="floatLeft spacer-top">
+                <div class="floatLeft ">
                     <h6><a routerLink="register"> New Office Registration</a></h6>
                 </div>
-                <div class="floatRight spacer-top">
+                <div class="floatRight">
                     <h6>
                         <a routerLink="forgot-password">Forgot Password?</a>
                     </h6>
                 </div>
             </div>
+            <mat-spinner *ngIf="loginClicked" class="center" [diameter]="40"></mat-spinner>
         </div>
 
     </div>

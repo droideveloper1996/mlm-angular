@@ -1,11 +1,12 @@
 import { AddHeaderInterceptorService } from './services/add-header-interceptor.service';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { BranchComponent } from './branch/branch.component';
 import { WildcardComponent } from './wildcard/wildcard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ProgressBarModule } from "angular-progress-bar"
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -72,6 +73,7 @@ import { NgxPrintModule } from 'ngx-print';
     FormsModule,
     HttpClientModule,
     MatDialogModule,
+    ProgressBarModule,
     MatProgressSpinnerModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
@@ -108,7 +110,8 @@ import { NgxPrintModule } from 'ngx-print';
       provide: HTTP_INTERCEPTORS,
       useClass: AddHeaderInterceptorService,
       multi: true,
-    }
+    },
+
   ],
   bootstrap: [AppComponent]
 })

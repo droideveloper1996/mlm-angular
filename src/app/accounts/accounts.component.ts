@@ -23,6 +23,10 @@ export class AccountsComponent implements OnInit {
   schoolCode;
   BRANCH_NAME
   DateTodays
+  class;
+  previousBalance; currentMonth; outstandingDue; paid;
+  section;
+  stream;
 
   constructor(private service: StudentServices) { }
 
@@ -44,7 +48,13 @@ export class AccountsComponent implements OnInit {
       this.motherName = res.personalDetail.motherName;
       this.fatherName = res.personalDetail.fatherName;
       this.img_ref = res.profilePictureRef;
-
+      this.section = res.section;
+      this.class = res.class;
+      this.stream = res.stream;
+      this.previousBalance = res.previousBalance;
+      if (this.previousBalance == null) {
+        this.previousBalance = 0;
+      }
       if (res.medium == 'english' && res.boardType == 'cbse') {
         this.schoolCode = "MLMEC"
         this.BRANCH_NAME = "MOTILAL MEMORIAL EDUCATION CENTRE HASANPUR KANPUR"
@@ -52,6 +62,10 @@ export class AccountsComponent implements OnInit {
         this.schoolCode = "MLMIC"
         this.BRANCH_NAME = "MOTILAL MEMORIAL INTER COLLEGE HASANPUR KANPUR"
       }
+      if (this.stream == null) {
+        this.stream = " ";
+      }
+      this.getFeeChart(this.schoolCode, this.class, this.stream);
 
       this.RecieptNumber = this.schoolCode + '/' + this.studentID + '/' + Math.round(+new Date() / 1000);
     }, err => {
@@ -183,7 +197,8 @@ export class AccountsComponent implements OnInit {
       </div>
       <div class="title custom-style2">
         <div class="custom-img">
-          <h5> Class:${this.fatherName}</h5>
+          <h5> Class:${this.class}</h5> 
+          <h5> -${this.section}</h5>
         </div>  
       </div>
   </div>
@@ -219,5 +234,83 @@ export class AccountsComponent implements OnInit {
       </html>`
     );
     popupWin.document.close();
+  }
+
+  /**
+   * Determining the predefined Fees
+   */
+  getFeeChart(_schoolCode, _class, _stream) {
+    console.log(_schoolCode)
+    console.log(_class)
+    console.log(_stream)
+
+    var feePayload;
+    if (_schoolCode = "MLMIC") {
+      if (_class == "na" || _class == "nb") {
+        feePayload = {
+          registration: 300,
+          monthly: 250,
+          security: 350,
+          total: 900
+
+        }
+      }
+      else if (_class >= 1 && _class <= 5) {
+        feePayload = {
+          registration: 400,
+          monthly: 300,
+          security: 400,
+          total: 1100
+
+        }
+      }
+      else if (_class >= 6 && _class <= 8) {
+        feePayload = {
+          registration: 500,
+          monthly: 450,
+          security: 600,
+          total: 1550
+
+        };
+      }
+      else if (_class >= 9 && _class <= 10) {
+        feePayload = {
+          registration: 500,
+          monthly: 500,
+          security: 1100,
+          total: 2100
+
+        };
+      }
+      else if (_class >= 11 && _class <= 12 && _stream == 'science') {
+        feePayload = {
+          registration: 1000,
+          monthly: 700,
+          security: 1600,
+          total: 3300
+
+        };
+      }
+      else if (_class >= 11 && _class <= 12 && _stream == 'arts') {
+        feePayload = {
+          registration: 1000,
+          monthly: 550,
+          security: 1500,
+          total: 3050
+
+        };
+      }
+    }
+    else if (_schoolCode = "MLMEC") {
+
+      //Implement Fee structure
+
+    }
+
+    this.currentMonth = feePayload.monthly;
+    this.outstandingDue = this.currentMonth + this.previousBalance;
+    console.log(this.outstandingDue);
+
+
   }
 }
