@@ -7,7 +7,7 @@ import { StudentServices } from '../services/student-services.service';
   styleUrls: ['./student-profile.component.css']
 })
 export class StudentProfileComponent implements OnInit {
-
+  _filter; p;
   constructor(private service: StudentServices) { }
 
   students: any

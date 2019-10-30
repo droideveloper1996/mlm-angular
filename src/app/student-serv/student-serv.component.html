@@ -2,5 +2,35 @@
     <app-sidebar></app-sidebar>
 </aside>
 <div class="main">
+    <div class="row card">
+        <ngb-tabset>
+            <ngb-tab title="Update Student Profile">
+                <ng-template ngbTabContent>
+                    <app-update-student></app-update-student>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Pending Fee">
+                <ng-template ngbTabContent>
+                    <app-pending-fee></app-pending-fee>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Attendance Report">
+                <ng-template ngbTabContent>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Fine">
+                <ng-template ngbTabContent>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Result">
+                <ng-template ngbTabContent>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Generate TC">
+                <ng-template ngbTabContent>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
 
+    </div>
 </div>

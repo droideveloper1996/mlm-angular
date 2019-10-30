@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,700,900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 100%;
+            height: 20%;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+        }
+
+        .center {
+            justify-content: center;
+
+        }
+
+        .box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .box-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        table,
+        th,
+        td {
+
+            border: 1px solid black;
+        }
+
+        td {
+            font-weight: 400;
+            ;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th td {
+            justify-content: center;
+            align-content: center;
+            padding-left: 10px;
+        }
+
+        .row-2 {
+            display: flex;
+            margin-top: 4%;
+        }
+
+        .push {
+            margin-left: auto;
+        }
+
+        .title {
+            font-weight: 900;
+        }
+
+        strong {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row box">
+            <div class="">
+                  <img src="../../assets/_logo_edited.png"/>   </div> <div class="title">
+                ${this.BRANCH_NAME}
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="title">
+                    Date:${this.DateTodays}
+                </div>
+                <div class="title">
+                    Student Copy
+                </div>
+                <div class="title">
+                    Receipt No:${this.RecieptNumber}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            ------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="box-col">
+                    <div class="vertical">
+                        <strong>Student Name<strong>: ${this.fName} ${this.lName}
+                    </div>
+                    <div class="vertical">
+                        <strong>Student ID/Scholar No<strong>:${this.studentID}
+                    </div>
+                    <div class="vertical">
+                        <strong> Father's Name<strong>:${this.fatherName}
+                    </div>
+                    <div class="vertical">
+                        <strong>Class<strong>:${this.class}
+                    </div>
+                    <div class="vertical">
+                        <strong>Section<strong>:${this.section}
+                    </div>
+                </div>
+                <div class="box-image">
+                    image
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            ------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class="row-1">
+            <table>
+                  <tr>
+                        <th>SNo.</th>
+                        <th>Month</th>
+                        <th>Current</th>
+                        <th>Previous Due</th>
+                        <th>Mode</th>
+                        <th>Balance</th>
+                        <th>Total Amount</th>
+                      </tr>
+                  <tr>
+                        <td>1</td>
+                        <td>Aug-Oct</td>
+                        <td>0</td>
+                        <td>350</td>
+                        <td>Cash</td>
+                        <td>350</td>
+                    <td>350</td>
+                </tr>
+            </table>
+            <br><br>
+
+        </div>
+        <div class="row-2">
+            <div class="push">School Stamp / Signature</div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        ------------------------------------------------------------------------------------------------------------------
+    </div>
+    <br><br><br>
+    <div class="container">
+        <div class="row box">
+            <div class="">
+                  <img src="../../assets/_logo_edited.png"/>   </div> <div class="title">
+                ${this.BRANCH_NAME}
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="title">
+                    Date:${this.DateTodays}
+                </div>
+                <div class="title">
+                    Office Copy
+                </div>
+                <div class="title">
+                    Receipt No:${this.RecieptNumber}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            ------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="box-col">
+                    <div class="vertical">
+                        <strong>Student Name<strong>: ${this.fName} ${this.lName}
+                    </div>
+                    <div class="vertical">
+                        <strong>Student ID/Scholar No<strong>:${this.studentID}
+                    </div>
+                    <div class="vertical">
+                        <strong> Father's Name<strong>:${this.fatherName}
+                    </div>
+                    <div class="vertical">
+                        <strong>Class<strong>:${this.class}
+                    </div>
+                    <div class="vertical">
+                        <strong>Section<strong>:${this.section}
+                    </div>
+                </div>
+                <div class="box-image">
+                    image
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            ------------------------------------------------------------------------------------------------------------------
+        </div>
+        <div class="row-1">
+            <table>
+                  <tr>
+                        <th>SNo.</th>
+                        <th>Month</th>
+                        <th>Current</th>
+                        <th>Previous Due</th>
+                        <th>Mode</th>
+                        <th>Balance</th>
+                        <th>Total Amount</th>
+                      </tr>
+                  <tr>
+                        <td>1</td>
+                        <td>Aug-Oct</td>
+                        <td>0</td>
+                        <td>Rs.350</td>
+                        <td>Cash</td>
+                        <td>₹350</td>
+                    <td>350</td>
+                </tr>
+            </table>
+            <br><br>
+
+        </div>
+        <div class="row-2">
+            <div class="push">School Stamp / Signature</div>
+        </div>
+    </div>
+</body>
+
+</html>

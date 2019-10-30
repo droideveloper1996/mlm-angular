@@ -52,6 +52,25 @@ interface UploadEvent {
   status: number;
   _id?: string;
 }
+interface StudentPay {
+  isFirstTimeDeposit: boolean;
+  student: customPay;
+
+}
+
+interface customPay {
+  studentFeeReport: [studentAray]
+}
+interface studentAray {
+  updatedBalance: number,
+  studentReceiptNo: string;
+  studentCurrentCharge: number;
+  studentPaid: number;
+  studentTotalAmountDue: number;
+  studentPaymentToward: number;
+
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -83,6 +102,22 @@ export class StudentServices {
     return this.http.get<StudentResponse>(`${this.CURRENT_URL}/api/office/getStudentById`, {
       headers: headers, params: params
     }).pipe(map(res => res));
+  }
+
+  getstudentpreviousBalance(sid) {
+    const payload = {
+      studentID: sid
+    }
+    console.log("Payload", payload)
+
+    return this.http.post<StudentPay>(`${this.CURRENT_URL}/api/office/isFirstTimeDeposit`, payload)
+      .pipe(map(response => response))
+  }
+
+  payStudentFee(payload) {
+
+    return this.http.post<customPay>(`${this.CURRENT_URL}/api/office/depositFee`, payload)
+      .pipe(map(response => response))
   }
 
 }

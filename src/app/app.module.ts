@@ -39,6 +39,10 @@ import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgxPrintModule } from 'ngx-print';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+import { PendingFeeComponent } from './pending-fee/pending-fee.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +66,7 @@ import { NgxPrintModule } from 'ngx-print';
     ResultComponent,
     StudentServComponent,
     CalendarComponent,
-    SyllabusComponent, TimetableComponent, StaffComponent, FooterComponent, DashboardComponent,
+    SyllabusComponent, TimetableComponent, StaffComponent, FooterComponent, DashboardComponent, UpdateStudentComponent, PendingFeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,9 @@ import { NgxPrintModule } from 'ngx-print';
     HttpClientModule,
     MatDialogModule,
     ProgressBarModule,
+    Ng2SearchPipeModule,
     MatProgressSpinnerModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },

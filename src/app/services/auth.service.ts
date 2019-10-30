@@ -32,6 +32,7 @@ export class AuthService {
       username: data.login
     }).pipe(map((response: LoginResponse) => {
       if (response && response.token) {
+        console.log('TOKEN+VALUE', response.token)
         localStorage.setItem('auth-token', response.token);
         return true;
       } else {

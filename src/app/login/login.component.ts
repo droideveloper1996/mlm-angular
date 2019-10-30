@@ -34,11 +34,12 @@ export class LoginComponent implements OnInit {
     this.authservice.authenticateOffice(payload).subscribe(res => {
       console.log(res);
       if (res) {
+        console.log('Response from API', res);
         // this.router.navigateByUrl('/MainNavComponent').then(() =>
         //   this.router.navigate(["/office/dashboard"]));
         window.location.href = "/#/office/dashboard"
 
-        //this.router.navigate([''])
+        //this.router.navigate(['/#/office/dashboard'])
       }
 
     }, error => {

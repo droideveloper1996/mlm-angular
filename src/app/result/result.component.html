@@ -2,5 +2,32 @@
     <app-sidebar></app-sidebar>
 </aside>
 <div class="main">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Student ID</label>
+                <input #studentID="ngModel" ngModel name="studentID" class="form-control" type="text">
+            </div>
+        </div>
+    </div>
 
+    <div class="card">
+        <div class="row">
+            <ngb-tabset type="pills">
+                <ngb-tab title="Update Result">
+                    <ng-template ngbTabContent>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Student One View">
+                    <ng-template ngbTabContent>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab title="Class Wise">
+                    <ng-template ngbTabContent>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+
+        </div>
+    </div>
 </div>

@@ -8,7 +8,7 @@
                 <div class="form-group">
                     <label for="studentId">Student ID./Scholar No.</label>
                     <input type="text" id="studentId" ngModel #studentId="ngModel" name="studentId"
-                        placeholder="Enter Student Id                                  |      MLMEC    |      MLMIC"
+                        placeholder="Enter Student Id                                  |  MLMEC  |   MLMIC"
                         class="form-control">
 
                 </div>
@@ -77,8 +77,7 @@
                 <h4>Payment Towards:</h4>
                 <div class="form-group">
                     <label for="paymentType"></label>
-                    <select id="paymentType" #paymentType="ngModel" ngModel name="paymentType" ngModeltype="text"
-                        class="form-control">
+                    <select id="paymentType" [(ngModel)]="paymentType" type="text" class="form-control">
                         <option disabled selected value="">Choose Payment For</option>
                         <option value="monthly">Monthly Fee</option>
                         <option value="registration">Registration Fee</option>
@@ -94,12 +93,12 @@
             <div class="row-custom">
                 <br><br>
                 <h4>Fees Summary</h4>
-                <div *ngIf="paymentType.value=='monthly'" class="row" id="print-section-receipt">
+                <div *ngIf="paymentType=='monthly'" class="row" id="print-section-receipt">
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label for="previousBalance">Previous Balance</label>
-                            <input type="number" id="previousBalance" [(ngModel)]="previousBalance"
-                                class="form-control">
+                            <input type="number" id="previousBalance" (keyup)="updateOutstanding()"
+                                [(ngModel)]="previousBalance" [disabled]="!firstTimeDeposit" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-1">
@@ -140,12 +139,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
-                <button class="btn btn-danger" (click)="print()">Print Receipt</button>
+                <button class="btn btn-danger" (click)="paynow()">Pay Now</button>
+
+                <button *ngIf="hasPaid" class="btn btn-danger" (click)="print()">Print Receipt</button>
             </div>
         </div>
 

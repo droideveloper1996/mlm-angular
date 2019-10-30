@@ -2,6 +2,15 @@
     <app-sidebar></app-sidebar>
 </aside>
 <div class="main">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="filter">Filter Table</label>
+                <input type="text" id="_filter" placeholder="Filter Student Data" [(ngModel)]="_filter"
+                    class="form-control">
+            </div>
+        </div>
+    </div>
     <div class="well">
         <div>Registered Student</div>
         <br />
@@ -14,14 +23,15 @@
                     <th scope="col">Father's Name</th>
                     <th scope="col">Mother's Name</th>
                     <th scope="col">Board </th>
-                    <th scope="col">Contact </th>
+                    <th scope="col">Class </th>
                     <th scope="col">Photo </th>
 
                 </tr>
             </thead>
             <tbody>
 
-                <tr *ngFor="let student of students; index as i">
+                <tr
+                    *ngFor="let student of students| filter:_filter|paginate:{itemsPerPage:10,currentPage:p}; index as i ">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>
                         {{ student.studentID }}
@@ -38,7 +48,7 @@
                         {{ student.boardType| uppercase}}
                     </td>
                     <td>
-                        {{ student.primaryMobile}}
+                        {{ student.class | uppercase}}
                     </td>
                     <td>
                         <img src="{{ACTIVE_URL}}/getImage/{{student.profilePictureRef}}" alt="student_pic">
@@ -46,7 +56,8 @@
                 </tr>
 
             </tbody>
-
         </table>
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
     </div>
 </div>
